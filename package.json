@@ -1,0 +1,40 @@
+{
+  "name": "erc6551-demo",
+  "version": "0.1.0",
+  "description": "ERC-6551 demo",
+  "keywords": [
+    "blockchains",
+    "erc-6551"
+  ],
+  "author": "ngduythao",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ngduythao/erc6551-demo"
+  },
+  "main": "lib/index.js",
+  "module": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=14"
+  },
+  "scripts": {
+    "start": "npm run build && cp ./lib ./public/lib",
+    "build": "rm -rf lib && tsc",
+    "types": "rm -rf ./lib/index.d.ts && tsc --emitDeclarationOnly --outDir ./lib",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "esbuild": "^0.17.5",
+    "ethers": "^5.7.0",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "dotenv": "^16.1.4"
+  }
+}
